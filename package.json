@@ -1,0 +1,24 @@
+{
+  "name": "PhillipTemple",
+  "version": "1.0.0",
+  "description": "My Name is Phillip Temple",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pcortezt/savvy-portfolio-Phillip-Temple.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pcortezt/savvy-portfolio-Phillip-Temple/issues"
+  },
+  "homepage": "https://github.com/pcortezt/savvy-portfolio-Phillip-Temple#readme",
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "parcel-bundler": "^1.10.3"
+  }
+}
