@@ -13,8 +13,8 @@ body {
 #navigation .dropdown {
     display: none;
     position: absolute;
-    left: 1px;
-    top: 20px;
+    left: -20px;
+    top: 25px;
 }
 
 #navigation a:hover+.dropdown,
