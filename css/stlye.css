@@ -1,74 +1,126 @@
 body {
+    background-color: rgb(233, 72, 198);
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: min-content 30vh auto min-content;
+    grid-template-areas:
+    "navigation"
+    "header"
+    "content"
+    "footer";
+}
+
+h1 {
+    background-color: rgb(233, 169, 72);
     font-family: 'Allerta Stencil', sans-serif;
-    background-color: rgb(251, 251, 251);
-    background-image: url("https://i.imgur.com/QwNreAp.jpg");
-    height: 700px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    background-color: rgb(251, 251, 251);
-    margin: 0;
-    margin-top: 50px
+    font-size: 2em;
 }
 
-#navigation .dropdown {
-    color: rgb(77, 35, 126);
-    display: none;
-    position: absolute;
-    left: -20px;
-    top: 25px;
+h2 {
+    background-color: rgb(233, 217, 72);
 }
 
-#navigation a:hover+.dropdown, #navigation a+.dropdown:hover {
-    display: block;
-    
-}
-
-#navigation {
-    background: rgb(188, 183, 202);
-    position: fixed;
-    top: 0;
-    width: 100vw;
-}
-
-#navigation li:first-child {
-    background-color: rgb(188, 183, 202)
-}
-
-#navigation>ul>li {
-    display: inline;
-    position: relative;
-    padding: 10px
-}
-
-#navigation li:hover {
-    background-color: white
+h3 {
+    font-style: italic;
 }
 
 img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1em auto;
     max-width: 300px;
     width: 80%;
 }
 
-#header h1 {
-    font-family: 'Allerta Stencil', sans-serif;
-    color: rgb(77, 35, 126);
-    margin-top: 1.3em;
-    margin-left: 20em;
-    display: block;
-    max-width: 300px;
+p {
+    font-style: italic;
 }
 
-#navigation ul {
-    flex-direction: row;
-    justify-content: space-around;
+ul {
+    background-color: rgb(233, 18, 47);
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 900px;
+    width: 90%;
+}
+
+.emphasis {
+    font-weight: bold;
+}
+
+#middle {
+    font-size: 2em;
+    font-style: italic;
+}
+
+#header {
+    background-image: url(https://i.imgur.com/8MD6UHl.png);
+    background-position: center right;
+    grid-area: header;
+}
+
+#header h1, 
+#header h2 {
+    color: rgb(72, 187, 233);
+}
+
+#content {
+    background-color: rgb(72, 233, 72);
+    grid-area: content;
+    padding: 20px;
+}
+
+#footer {
+    background-color: chartreuse;
+    grid-area: footer;
+}
+
+#navigation {
+    background: rgb(158, 51, 230);
+    grid-area: navigation;
+    position: sticky;
+    top: 0;
+}
+
+#navigation > ul {
     align-items: center;
     display: flex;
-    height: 1vh;
-    padding: 0;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+}
+
+#navigation > ul > li {
+    display: inline;
+    margin: 10px;
+    position: relative;
+}
+
+#navigation .dropdown {
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 28px;
+}
+
+#navigation a:hover+.dropdown,
+#navigation a+.dropdown:hover {
+    display: block;
+}
+
+
+@media (min-width: 750px) {
+    body {
+        grid-template-columns: 15% auto;
+        grid-template-rows: 40vh auto min-content;
+        grid-template-areas: 
+        "navigation header" 
+        "navigation content" 
+        "navigation footer";
+    }
+    #navigation > ul {
+        flex-direction: column;
+    }
 }
