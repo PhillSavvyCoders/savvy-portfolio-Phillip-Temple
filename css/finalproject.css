@@ -1,0 +1,24 @@
+body {
+    background-color: rgb(241, 7, 222)
+}
+
+div {
+    background-color: rgb(42, 161, 165);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25%;
+    background-color: rgb(10, 211, 247);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 50%;
+    padding: 0%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
