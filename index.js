@@ -1,4 +1,14 @@
-var currentYear = 2016;
-var myCountry = "USA";
-var myPhrase = currentYear + " is an election year in the " + myCountry;
-console.log(myPhrase);
+var userName = prompt('What is your name');
+
+var greet = function greet(){
+    if(!userName){
+        userName = prompt('What is your name Please');
+
+        greet();
+    }
+    else{
+        alert('Hello' + userName);
+    }
+};
+
+greet();
