@@ -3,11 +3,7 @@ body {
     display: grid;
     min-height: 100vh;
     grid-template-rows: min-content 30vh auto min-content;
-    grid-template-areas:
-    "navigation"
-    "header"
-    "content"
-    "footer";
+    grid-template-areas: "navigation" "header" "content" "footer";
 }
 
 h1 {
@@ -50,7 +46,7 @@ ul {
 }
 
 #middle {
-    font-size: 2em;
+  
     font-style: italic;
 }
 
@@ -60,8 +56,7 @@ ul {
     grid-area: header;
 }
 
-#header h1, 
-#header h2 {
+#header h1, #header h2 {
     color: rgb(72, 187, 233);
 }
 
@@ -77,13 +72,13 @@ ul {
 }
 
 #navigation {
-    background: rgb(158, 51, 230);
+    background-color: rgb(158, 51, 230);
     grid-area: navigation;
     position: sticky;
     top: 0;
 }
 
-#navigation > ul {
+#navigation>ul {
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -92,7 +87,7 @@ ul {
     padding: 0;
 }
 
-#navigation > ul > li {
+#navigation>ul>li {
     display: inline;
     margin: 10px;
     position: relative;
@@ -100,27 +95,22 @@ ul {
 
 #navigation .dropdown {
     display: none;
-    left: 0;
+    left: -20px;
     position: absolute;
-    top: 28px;
+    top: 15px;
 }
 
-#navigation a:hover+.dropdown,
-#navigation a+.dropdown:hover {
+#navigation a:hover+.dropdown, #navigation a+.dropdown:hover {
     display: block;
 }
-
 
 @media (min-width: 750px) {
     body {
         grid-template-columns: 15% auto;
         grid-template-rows: 40vh auto min-content;
-        grid-template-areas: 
-        "navigation header" 
-        "navigation content" 
-        "navigation footer";
+        grid-template-areas: "navigation header" "navigation content" "navigation footer";
     }
-    #navigation > ul {
+    #navigation>ul {
         flex-direction: column;
     }
 }
