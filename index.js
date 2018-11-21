@@ -1,3 +1,5 @@
+/*
+
 var userName = prompt('What is your name');
 
 var greet = function greet(){
@@ -12,3 +14,19 @@ var greet = function greet(){
 };
 
 greet();
+*/
+
+var name = prompt('What is your name');
+
+// eslint-disable-next-line func-names
+var checkName = function(){
+    if(name === ''){
+        name = prompt('What is your name, for real this time?');
+        
+        checkName();
+    }
+};
+
+checkName();
+
+alert('Hello ' + name);
