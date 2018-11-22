@@ -11,27 +11,27 @@ h1 {
     font-family: 'Allerta Stencil', sans-serif;
     font-size: 2em;
     text-align: center;
-   display: inline-flex;
-   
+    display: inline-flex;
 }
 
 h2 {
-    background-color: rgba(233, 217, 72, 0.365);
+    background-color: rgba(233, 217, 72, 0.152);
     font-family: 'Allerta Stencil', sans-serif;
     text-align: center;
     display: inline-flex;
-    
 }
 
 h3 {
     font-style: italic;
 }
+
 p {
     background-color: rgba(233, 18, 47, 0.488);
     display: inline-flex;
     font-size: 5em;
     text-align: center
 }
+
 img {
     display: block;
     margin: 1em auto;
@@ -51,8 +51,6 @@ ul {
     margin: 0 auto;
     max-width: 900px;
     width: 90%;
-    
-
 }
 
 .emphasis {
@@ -60,7 +58,6 @@ ul {
 }
 
 #middle {
-  
     font-style: italic;
 }
 
@@ -74,9 +71,7 @@ ul {
     color: rgb(72, 187, 233);
 }
 
-
 #content {
-    
     grid-area: content;
     padding: 20px;
 }
@@ -109,6 +104,7 @@ ul {
 }
 
 #navigation .dropdown {
+    background-color: pink;
     display: none;
     left: -20px;
     position: absolute;

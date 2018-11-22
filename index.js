@@ -1,6 +1,6 @@
-/*
+var userName = prompt('What is your name') || 'Anonymous User';
 
-var userName = prompt('What is your name');
+var title = document.querySelector('h1');
 
 var greet = function greet(){
     if(!userName){
@@ -9,24 +9,46 @@ var greet = function greet(){
         greet();
     }
     else{
-        alert('Hello' + userName);
+        title.textContent += ', ' + userName;
     }
 };
 
 greet();
-*/
 
-var name = prompt('What is your name');
+/*
 
-// eslint-disable-next-line func-names
-var checkName = function(){
-    if(name === ''){
-        name = prompt('What is your name, for real this time?');
-        
-        checkName();
-    }
-};
 
-checkName();
+for(var i = 1; i <= 100; i++){
+    var output = '';
 
-alert('Hello ' + name);
+    if(i % 3 == 0){
+ output += 'Fizz'; 
+}
+    if(i % 5 == 0){
+ output += 'Buzz'; 
+}
+    if(output == ''){
+ output = i; 
+}
+    console.log(output);
+}
+
+
+
+
+if(testNumber % 5 === 0 && testNumber % 3 === 0){
+    alert('FizzBuzz');
+}
+ else if(testNumber % 5 === 0){
+    alert('Fizz');
+}
+ else if(testNumber % 3 === 0){
+    alert('Buzz');
+}
+ else{
+    alert(testNumber);
+}
+
+document.querySelector('h1').textContent = 'Trump slams Chief Justice Roberts, "Your Momma ..."'
+
+document.querySelectorAll('h1')["0"].style.color = 'pink'
