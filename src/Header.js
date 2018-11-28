@@ -1,12 +1,12 @@
-export default `
+export default function Header(state){
+    return `
 
 <div id="header">
         <div class="container">
-            <h1>Phill's Savvy Coders Portfolio Projects</h1>
+            <h1>${state.title}</h1>
             <h2>My name is Phillip Cortez Temple</h2>
         </div>
         </div>
 
 `;
-
-
+}
