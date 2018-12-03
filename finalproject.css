@@ -1,9 +1,4 @@
 body{
 
-color: blueviolet;
-grid-template-rows:    repeat(4, 100px);
-grid-template-columns: repeat(3, 1fr);
-
-justify-items: center;
-align-items:   center;
+background-color: white;
 }
