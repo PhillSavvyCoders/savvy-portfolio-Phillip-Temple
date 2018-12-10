@@ -6,7 +6,7 @@ export default function Footer(){
     <ul>
         <li class="emphasis">
             <i class="fab fa-github"></i>
-            GitHub<a href="https://github.com/pcortezt/savvy-portfolio-Phillip-Temple">pcortezt</a>
+            GitHub <a href="https://github.com/pcortezt/savvy-portfolio-Phillip-Temple">pcortezt</a>
         </li>
         <li id="middle">
             <i class="fab fa-twitter"></i>

@@ -1,5 +1,3 @@
-
-
 var userName = prompt('What is your name?');
 
 export default function greet(){

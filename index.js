@@ -3,9 +3,8 @@ import Footer from './src/Footer';
 import greet from './src/Greeting';
 import Header from './src/Header';
 import Navigation from './src/Navigation';
-import { link } from 'fs';
 
-var links;
+
 var State = {
     'active': 'home',
     'home': {
@@ -20,10 +19,10 @@ var State = {
         'title': "Phill's Contacts",
         'links': [ 'home', 'Blog', 'Project' ]
     },
-    'Projects': {
+    'Project': {
         'title': "Phill's Awesame Projects",
         'links': [ 'home', 'Blog', 'Contact' ]
-    },
+    }
 };
 var root = document.querySelector('#root');
 
@@ -55,6 +54,5 @@ function render(state){
         );
     }
 }
-
 
 render(State);
