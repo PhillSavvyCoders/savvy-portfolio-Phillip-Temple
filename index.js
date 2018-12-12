@@ -3,40 +3,39 @@ import Footer from './src/Footer';
 import greet from './src/Greeting';
 import Header from './src/Header';
 import Navigation from './src/Navigation';
+import Navigo from 'navigo';
+import { capitalize } from 'lodash';
 
+
+var router = new Navigo(window.location.origin);
 
 var State = {
-    'active': 'home',
-    'home': {
+    'active': 'Home',
+    'Home': {
         'title': "Phill's Savvy Coders Portfolio Projects",
         'links': [ 'Blog', 'Contact', 'Project' ]
     },
     'Blog': {
         'title': "Phill's Blog Projects",
-        'links': [ 'home', 'Contact', 'Project' ]
+        'links': [ 'Home', 'Contact', 'Project' ]
     },
     'Contact': {
         'title': "Phill's Contacts",
-        'links': [ 'home', 'Blog', 'Project' ]
+        'links': [ 'Home', 'Blog', 'Project' ]
     },
     'Project': {
         'title': "Phill's Awesame Projects",
-        'links': [ 'home', 'Blog', 'Contact' ]
+        'links': [ 'Home', 'Blog', 'Contact' ]
     }
 };
 var root = document.querySelector('#root');
 
-function handleNavigation(event){
-    event.preventDefault();
-   
-
-    State.active = event.target.textContent;
+function handleNavigation(params){
+    State.active = capitalize(params.page);
 
     render(State); //eslint-disable-line
 }
 function render(state){
-    var links;
-
     root.innerHTML = `
     ${Navigation(state)}
     ${Header(state)}
@@ -46,13 +45,11 @@ function render(state){
 
     greet();
 
-    links = document.querySelectorAll('#navigation a');
-    for(let i = 0; i < links.length; i++){
-        links[i].addEventListener(
-            'click',
-            handleNavigation
-        );
-    }
+    router.updatePageLinks();
 }
 
-render(State);
+
+router
+    .on('/:page', handleNavigation)
+    .on('/',() => handleNavigation({ 'page': 'Home' }))
+    .resolve();

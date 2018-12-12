@@ -1,10 +1,18 @@
+import { lowerCase } from 'lodash';
+
 function buildLinks(links){
     var list = '';
+    var link = '';
 
     for(let i = 0; i < links.length; i++){
+        if(links[i] !== 'Home'){
+            link = links[i];
+        }
         list += `
         <li>
-            <a href="#">${links[i]}</a>
+            <a href="/${lowerCase(link)}" data-navigo>
+                ${links[i]}
+            </a>
         <li>
         `;
     }
@@ -14,10 +22,10 @@ function buildLinks(links){
 
 export default function Navigation(state){
     return `
-<div id="navigation">
-        <ul class="container">
-            ${buildLinks(state[state.active].links)}
-                </ul>
-    </div>
-`;
+        <div id="navigation">
+            <ul class="container">
+                ${buildLinks(state[state.active].links)}
+            </ul>
+        </div>
+    `;
 }
