@@ -1,8 +1,11 @@
-export default function Content(){
+import * as Screens from './Screens';
+
+
+export default function Content(state){
     return `
 <div id="content">
         <div class="container">
-            <p>I am starting my life as a Coder!</p>
+           ${Screens[state.active]()} 
         </div>
     </div>
 
