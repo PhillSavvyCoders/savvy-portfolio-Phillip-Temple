@@ -1,15 +1,13 @@
 #root {
   background-image: url(https://i.imgur.com/0k5fO77.png);
   background-repeat: no-repeat;
-  
+  background-size: 100em;
   font-family: 'Press Start 2P', monospace;
-  
   color: orange;
   display: grid;
   min-height: 100vh;
   grid-template-rows: min-content 30vh auto min-content;
   grid-template-areas: "navigation" "header" "content" "footer";
-  
 }
 
 h1 {
@@ -17,7 +15,6 @@ h1 {
   font-family: 'Press Start 2P', monospace;
   font-size: 1em;
   padding: 5px;
-  
   grid-template-rows: min-content 30vh auto min-content;
 }
 
@@ -66,13 +63,11 @@ ul {
   background-position: center right;
   grid-area: header;
   border: 3px solid orange;
-  
 }
 
 #header h1, #header h2 {
   color: orange;
   border: 3px solid orange;
-
 }
 
 #content {
@@ -86,7 +81,6 @@ ul {
   background-color: rgba(77, 68, 68, 0.652);
   grid-area: footer;
   border: 3px solid orange;
-  
 }
 
 #navigation {
@@ -95,7 +89,6 @@ ul {
   position: sticky;
   top: 0;
   border: 3px solid orange;
-
 }
 
 #navigation>ul {
@@ -105,7 +98,6 @@ ul {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0;
-  
 }
 
 #navigation>ul>li {
@@ -139,4 +131,12 @@ ul {
 
 a {
   color: orange;
+}
+
+input {
+  width: 95%;
+  margin: auto;
+  padding: 0;
+  border: auto;
+  font-size: 12px;
 }
