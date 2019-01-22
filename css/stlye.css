@@ -1,163 +1,142 @@
 #root {
   background-image: url(https://i.imgur.com/0k5fO77.png);
   background-repeat: no-repeat;
-  background-size: 100em;
+  
   font-family: 'Press Start 2P', monospace;
-    background-color: rgba(77, 68, 68, 0.652);
-    color: orange;
-    display: grid;
-    min-height: 100vh;
-    grid-template-rows: min-content 30vh auto min-content;
-    grid-template-areas:
-      "navigation"
-      "header"
-      "content"
-      "footer";
-  }
   
+  color: orange;
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: min-content 30vh auto min-content;
+  grid-template-areas: "navigation" "header" "content" "footer";
   
-  h1 {
-    background-color: rgba(77, 68, 68, 0.652);
-    font-family: 'Press Start 2P', monospace;
-    font-size: 2em;
-    color: orange;
-    border: 3px solid orange;
-    padding: 5px;
-    width: 50vw;
-  }
-  
-  h2 {
-    background-color: rgba(77, 68, 68, 0.652);
-    color: orange;
-    border: 3px solid orange;
-    padding: 5px;
-    width: 40vw;
-  }
-  
-  h3 {
-    font-style: italic;
-  }
-  
-  img {
-    
-    display: block;
-    margin: 1em auto;
-    max-width: 300px;
-    width: 80%;
-
-  }
-  
-  p {
-    
-    font-style: italic;
-  }
-  
-  ul {
-    background-color: rgba(77, 68, 68, 0.652);
-  }
-  
-  .container {
-    
-    margin: 0 auto;
-    max-width: 900px;
-    width: 90%;
-    color: orange;
-  }
-  
-  .emphasis {
-    font-weight: bold;
-  }
-  
-  #middle {
-    max-width: 900px;
-    font-style: italic;
-  }
-  
-  #header {
-    
-    background-position: center right;
-    grid-area: header;
-    border: 3px solid orange;
-    padding: 5px;
 }
+
+h1 {
+  background-color: rgba(77, 68, 68, 0.652);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1em;
+  padding: 5px;
   
-  #header h1,
-  #header h2 {
-    color: orange;
-    border: 3px solid orange;
-    padding: 5px;
-  }
+  grid-template-rows: min-content 30vh auto min-content;
+}
+
+h2 {
+  background-color: rgba(77, 68, 68, 0.652);
+  padding: 5px;
+  font-size: 1em
+}
+
+h3 {
+  font-style: italic;
+}
+
+img {
+  display: block;
+  margin: 1em auto;
+  max-width: 300px;
+  width: 80%;
+}
+
+p {
+  font-style: italic;
+}
+
+ul {
+  background-color: rgba(77, 68, 68, 0.652);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 900px;
+  width: 90%;
+  color: orange;
+}
+
+.emphasis {
+  font-weight: bold;
+}
+
+#middle {
+  font-size: 2em;
+  font-style: italic;
+}
+
+#header {
+  background-position: center right;
+  grid-area: header;
+  border: 3px solid orange;
   
-  #content {
-    background-color: rgba(77, 68, 68, 0.652);
-    grid-area: content;
-    padding: 20px;
-    border: 3px solid orange;
-  }
+}
+
+#header h1, #header h2 {
+  color: orange;
+  border: 3px solid orange;
+
+}
+
+#content {
+  background-color: rgba(77, 68, 68, 0.652);
+  grid-area: content;
+  padding: 20px;
+  border: 3px solid orange;
+}
+
+#footer {
+  background-color: rgba(77, 68, 68, 0.652);
+  grid-area: footer;
+  border: 3px solid orange;
   
-  #footer {
-    background-color: rgba(77, 68, 68, 0.652);
-    grid-area: footer;border: 3px solid orange;
-    padding: 5px;
-  }
+}
+
+#navigation {
+  background-color: rgba(77, 68, 68, 0.652);
+  grid-area: navigation;
+  position: sticky;
+  top: 0;
+  border: 3px solid orange;
+
+}
+
+#navigation>ul {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
   
-  #navigation {
-    background-color: rgba(77, 68, 68, 0.652);
-    grid-area: navigation;
-    position: sticky;
-    top: 0;border: 3px solid orange;
-    padding: 5px;
-    
+}
+
+#navigation>ul>li {
+  display: inline;
+  margin: 10px;
+  position: relative;
+  padding: 5px;
+}
+
+#navigation .dropdown {
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 28px;
+}
+
+#navigation a:hover+.dropdown, #navigation a+.dropdown:hover {
+  display: block;
+}
+
+@media (min-width: 750px) {
+  #root {
+    grid-template-columns: 15% auto;
+    grid-template-rows: 40vh auto min-content;
+    grid-template-areas: "navigation header" "navigation content" "navigation footer";
   }
-  
-  #navigation > ul {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 0;
-   
-    padding: 5px;
+  #navigation>ul {
+    flex-direction: column;
   }
-  
-  #navigation > ul > li {
-    display: inline;
-    margin: 10px;
-    position: relative;
-    
-    padding: 5px;
-   
-  }
-  
-  #navigation .dropdown {
-    display: none;
-    left: 0;
-    position: absolute;
-    top: 28px;
-  }
-  
-  #navigation a:hover + .dropdown,
-  #navigation a + .dropdown:hover {
-    display: block;
-    
-  }
-  
-  @media (min-width: 750px) {
-    #root {
-      grid-template-columns: 15% auto;
-      grid-template-rows: 40vh auto min-content;
-      grid-template-areas:
-        "navigation header"
-        "navigation content"
-        "navigation footer";
-    }
-  
-    #navigation > ul {
-      flex-direction: column;
-      
-    }
-  }
-  a{
-    color: orange;
-  }
+}
+
+a {
+  color: orange;
+}
