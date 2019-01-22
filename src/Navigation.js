@@ -1,31 +1,29 @@
-import { lowerCase } from 'lodash';
+import { capitalize } from 'lodash';
+import { html } from 'lit-html';
 
-function buildLinks(links){
-    var list = '';
-    var link = '';
 
-    for(let i = 0; i < links.length; i++){
-        if(links[i] !== 'Home'){
-            link = links[i];
-        }
-        list += `
-        <li>
-            <a href="/${lowerCase(link)}" data-navigo>
-                ${links[i]}
-            </a>
-        <li>
-        `;
+function buildLink(link){
+    var href = '';
+
+    if(link !== 'home'){
+        href = link;
     }
 
-    return list;
+    return html`
+      <li>
+          <a href="/${href}" data-navigo>
+            ${capitalize(link)}
+          </a>
+      </li>
+    `;
 }
 
 export default function Navigation(state){
-    return `
-        <div id="navigation">
-            <ul class="container">
-                ${buildLinks(state[state.active].links)}
-            </ul>
-        </div>
+    return html`
+      <div id="navigation">
+        <ul class="container">
+          ${state[state.active].links.map(buildLink)}
+        </ul>
+      </div>
     `;
 }
